@@ -31,7 +31,7 @@ export default function Homepage() {
             data: data,
         }
     }
-    
+
     const getInventories = () => {
         setShow(true);
         axios.get(API_URL + "/inventory/getAllInventories")
@@ -55,16 +55,16 @@ export default function Homepage() {
 
             <div>
                 <span className='getInventories'>
-                    <button onClick={getInventories}>GetInventories</button>
+                    <button onClick={getInventories}>Get Inventories</button>
                 </span>
                 <span>
-                    <button onClick={()=> {setShow(false)}}>HideInventories</button>
+                    <button onClick={()=> {setShow(false)}}>Hide Inventories</button>
                 </span>
             </div>
 
 
             <div className="createInventory">
-                <Link to="/create"><button>Create Inventory Items</button></Link>
+                <Link to="/create"><button>Create Inventory Item</button></Link>
             </div>
 
             {showInventories ? 
