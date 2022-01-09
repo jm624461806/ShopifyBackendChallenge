@@ -10,3 +10,14 @@
 .createInventory {
     margin-top: 10px;
 }
+
+.export {
+    float: left;
+    margin-left: 150px;
+    margin-top: 30px;
+}
+
+th, td {
+    padding: 20px;
+}
+

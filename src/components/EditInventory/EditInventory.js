@@ -1,17 +1,30 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 //import './Mainpage.css';
-import { useHistory} from "react-router-dom";
+import { useParams, useHistory} from "react-router-dom";
 import axios from 'axios';
 import { API_URL } from '../../constant';
 
-export default function CreateInventory() {
+export default function EditInventory() {
 
     const history = useHistory();
+    const params = useParams();
+    const inventoryId = params.id;
 
     const [InventoryInfo, setInventory] = useState({
         InventoryItemName: '',
         InventoryItemNumber: '',
     })
+
+    useEffect(() => {
+        if (inventoryId) {
+            axios.get(API_URL + '/inventory/getInventory/' + inventoryId)
+            .then(response => {
+                const {name, number} = response.data;
+                setInventory({InventoryItemName: name, InventoryItemNumber: number});
+            })
+            .catch(error => console.log(error));
+        }
+    }, []);
 
     const onNameChange = (event) => {
         setInventory({...InventoryInfo, InventoryItemName: event.target.value});
@@ -24,9 +37,9 @@ export default function CreateInventory() {
         }
     }
 
-    const createInventory = () => {
-        axios.post(API_URL + '/inventory/createInventory', {...InventoryInfo})
-        .then((response) => history.push('/'))
+    const editInventory = () => {
+        axios.put(API_URL + '/inventory/editInventory', {...InventoryInfo, id: inventoryId})
+        .then((response) => history.push("/"))
         .catch((error) => console.log(error));
     }
 
@@ -47,7 +60,7 @@ export default function CreateInventory() {
             </div>
             
             <div>
-                <button onClick={createInventory}>Create Inventory</button>
+                <button onClick={editInventory}>Edit Inventory</button>
             </div>
         </div>
     )
