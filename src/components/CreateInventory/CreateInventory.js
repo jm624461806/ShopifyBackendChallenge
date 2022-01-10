@@ -1,8 +1,9 @@
 import { useState } from 'react';
-//import './Mainpage.css';
 import { useHistory} from "react-router-dom";
 import axios from 'axios';
 import { API_URL } from '../../constant';
+import {Link} from "react-router-dom";
+
 
 export default function CreateInventory() {
 
@@ -48,6 +49,10 @@ export default function CreateInventory() {
             
             <div>
                 <button onClick={createInventory}>Create Inventory</button>
+            </div>
+
+            <div>
+                <Link to="/"><button>Back To MainPage</button></Link>
             </div>
         </div>
     )

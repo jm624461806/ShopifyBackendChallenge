@@ -23,9 +23,9 @@ After you click this button, a list of inventories will be shown below with the 
 - Hide Inventories:  
 After you click this button, the list of inventoirs will be hidden.
 - Create Inventory Item:  
-After you click this button, you will be directed to a create inventory page where you can type the name of the inventory item and how many of them in the input fields and create this inventory which will be further backed in the database. After you have created this inventory, you will be redirected to the homepage.
+After you click this button, you will be directed to a create inventory page where you can type the name of the inventory item and how many of them in the input fields and create this inventory which will be further backed in the database. After you have created this inventory, you will be redirected to the homepage. There is also a ```Back To MainPage``` button which you will be redirected to the mainpage after you click it.
 - Edit:  
-After you click this button, you will be directed to a edit inventory page where you can edit the name and number of this specific inventory item you want to edit. After you finish the editting, you will be redirected to the homepage.
+After you click this button, you will be directed to a edit inventory page where you can edit the name and number of this specific inventory item you want to edit. After you finish the editting, you will be redirected to the homepage. There is also a ```Back To MainPage``` button which you will be redirected to the mainpage after you click it.
 - Delete:  
 After you click this button, the specific inventory will be deleted both from the application UI and database.
 - Export to CSV:  

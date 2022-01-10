@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-//import './Mainpage.css';
 import { useParams, useHistory} from "react-router-dom";
 import axios from 'axios';
 import { API_URL } from '../../constant';
+import {Link} from "react-router-dom";
 
 export default function EditInventory() {
 
@@ -62,6 +62,11 @@ export default function EditInventory() {
             <div>
                 <button onClick={editInventory}>Edit Inventory</button>
             </div>
+
+            <div>
+                <Link to="/"><button>Back To MainPage</button></Link>
+            </div>
+            
         </div>
     )
 }
